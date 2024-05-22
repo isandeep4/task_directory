@@ -13,9 +13,11 @@ export function App() {
       .then(console.log);
   }, []);
   const [activeItem, setActiveItem] = useState<FileSystemItem | null>(null);
+  const [activePath, setActivePath] = useState<string>('');
 
-  const handleActivateItem = (item: FileSystemItem) => {
+  const handleActivateItem = (item: FileSystemItem, path: string) => {
     setActiveItem(item);
+    setActivePath(path);
   };
 
   return (
@@ -25,10 +27,10 @@ export function App() {
       </div>
       <div className="content">
         <div className="sidebar">
-          <Sidebar fileSystem={fileSystem} onActivateItem={handleActivateItem} />
+          <Sidebar fileSystem={fileSystem} activePath={activePath} onActivateItem={(item) => handleActivateItem(item, `${activePath}/${item.name}`)} />
         </div>
         <div className="main">
-          <MainArea activeItem={activeItem} />
+          <MainArea activeItem={activeItem} activePath={activePath} onActivateItem={handleActivateItem} />
         </div>
       </div>
     </div>
