@@ -1,24 +1,32 @@
 import { useEffect, useState } from 'react';
 import Sidebar from './component/Sidebar';
-import fileSystem, { FileSystemItem } from './component/FileSystem';
+import { FileSystemItem } from './component/FileSystem';
 import './App.css';
 import MainArea from './component/MainArea';
+import { fetchData } from './service';
 
 export function App() {
-  // Do not hesitate to refactor this effect or use a different library to retrieve data
-  // it's only provided here as an example on how to fetch the data from the server
-  useEffect(() => {
-    fetch('http://localhost:8010/api/v1/tree')
-      .then((r) => r.json())
-      .then(console.log);
-  }, []);
   const [activeItem, setActiveItem] = useState<FileSystemItem | null>(null);
   const [activePath, setActivePath] = useState<string>('');
+  const [fileSystem, setFileSystem] = useState<FileSystemItem[]>([]);
+  console.log("fileSystem", fileSystem)
 
   const handleActivateItem = (item: FileSystemItem, path: string) => {
     setActiveItem(item);
     setActivePath(path);
   };
+  useEffect(() => {
+    const loadTreeData = async () => {
+      try {
+        const response = await fetchData();
+        setFileSystem(response);
+      } catch (error) {
+        console.error('Error loading tree data:', error);
+      }
+    };
+
+    loadTreeData();
+  }, []);
 
   return (
     <div className="app">
