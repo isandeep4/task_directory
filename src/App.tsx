@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Sidebar from './component/Sidebar';
 import fileSystem, { FileSystemItem } from './component/FileSystem';
 import './App.css';
+import MainArea from './component/MainArea';
 
 export function App() {
   // Do not hesitate to refactor this effect or use a different library to retrieve data
@@ -25,6 +26,9 @@ export function App() {
       <div className="content">
         <div className="sidebar">
           <Sidebar fileSystem={fileSystem} onActivateItem={handleActivateItem} />
+        </div>
+        <div className="main">
+          <MainArea activeItem={activeItem} />
         </div>
       </div>
     </div>
