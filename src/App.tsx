@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Sidebar from './component/Sidebar';
 import fileSystem, { FileSystemItem } from './component/FileSystem';
+import './App.css';
 
 export function App() {
   // Do not hesitate to refactor this effect or use a different library to retrieve data
