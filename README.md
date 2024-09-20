@@ -1,10 +1,6 @@
-# Corti Frontend Home Assignment
-
-Take all the time that you need to complete the assignment. We expect to see all the user stories fulfilled. Although there is no strict maximum, we do not expect you to spend more than 3-4 hours on this.
-
 ## Task - Directory Browser
 
-You have to build the application which displays a file system directory structure similar to the example wireframe provided. Items can only be one of two types - file or folder, which should be visually distinguishable.
+build the application which displays a file system directory structure similar to the example wireframe provided. Items can only be one of two types - file or folder, which should be visually distinguishable.
 
 **Folder is active**
 
