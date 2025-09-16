@@ -58,21 +58,6 @@ API server will be available from your client by requesting this url `http://loc
 ```js
 fetch('http://localhost:8010/api/v1/tree');
 ```
-
-## How we review
-
-- We value quality over feature-completeness. You don’t need to implement more than it’s asked for, instead imagine you were given these requirements by your product manager.
-
-- It is fine to leave things aside provided you call them out in your project's README. The goal of this code sample is to help us understand how you approach a given problem and how you make decisions when writing the implementation. It does not need to be production ready code (all the edge cases or errors handled), but it needs to lay the initial foundation which can be extended further by you or your team. You should consider this code ready for a code review with your colleague.
-
-- Don’t worry about having a super clean git history - some history is better than 1 squashed commit.
-
-## How to submit
-
-- We appreciate if you give us some feedback on this assignment in this README file below. Is the task too difficult/easy? Is it easy to understand what's asked for you to do? Is the scope of the task too big? Any feedback is welcome.
-
-- Upload this project to a public or private github repository. If repo is private, do not forget to invite the list of people that are mentioned in the email you received Alternatively, send the project in a zip file and share by email.
-
 - **IMPORTANT:** Don't forget to add a number of hours it took you to complete it!
 
 ## Your notes
